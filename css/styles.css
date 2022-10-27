@@ -5,7 +5,7 @@
 */
 
 /* CSS reset */
-body, header, nav, main, footer, img, h1, h3, ul {
+body, header, nav, main, footer, img, h1, h3, ul, section, article, aside {
     margin: 0;
     padding: 0;
     border: 0;
@@ -63,10 +63,31 @@ main {
     padding: 2%;
     background-color: #fff;
     font-family: 'Arimo', sans-serif;
+
 }
 
 main p {
     font-size: 1.25em;
+    text-decoration: none;
+}
+section{
+  background-color: rgba(24, 52, 64, 0.3);
+  color: #000;
+  margin-top: 4%;
+  padding: 2%;
+}
+
+article{
+  margin-top: 1%;
+  padding: 2%;
+}
+
+aside{
+  background-color: rgba(24, 52, 64, 0.3) ;
+  padding: 2%;
+  margin-top: 1%;
+  color: #183440;
+  text-shadow: 4px 4px 10px #183440;
 }
 
 /* Style rules for footer content */
@@ -75,10 +96,24 @@ footer {
     font-size: 0.85em;
     color: #fff;
     padding: 1% 0;
+    position: static;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #183440;
+
 }
 /* Media Query for tablet viewport */
 @media screen and (min-width: 550px) , print {
 
+  .grid{
+    display: grid;
+    grid-template-columns: 200px 200px;
+    grid-gap: 20px;
+  }
+  aside{
+    grid-column: 1 / span 2;
+  }
 
 /* Tablet Viewport: Show tab-desk class, hide mobile class */
 .tab-desk {
@@ -113,6 +148,14 @@ nav li {
 /* media query for Desktop Viewport */
 @media screen and (min-width: 769px) , print {
 
+  .grid{
+    display: grid;
+    grid-template-columns: 200px 200px;
+    grid-gap: 20px;
+  }
+  aside{
+    grid-column: 1 / span 2;
+  }
 /* Desktop Viewport: Style rule for header */
 header {
   padding: 2%;
@@ -143,7 +186,14 @@ nav li a:hover {
 }
 /* media query for Large Desktop Viewport */
 
-
+.grid{
+  display: grid;
+  grid-template-columns: 200px 200px;
+  grid-gap: 20px;
+}
+aside{
+  grid-column: 1 / span 2;
+}
   /* Media Query for print */
   @media print {
     body {
@@ -158,12 +208,3 @@ html, body {
   }
   .wrapper {
     min-height: 100%;
-
-    /* Equal to height of footer */
-    /* But also accounting for potential margin-bottom of last child */
-    margin-bottom: -50px;
-  }
-  .footer,
-  .push {
-    height: 50px;
-  }
